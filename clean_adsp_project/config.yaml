@@ -1,0 +1,26 @@
+#checkpoint_name: "transformer-edc-epoch=33-val_loss=0.3899.ckpt"
+
+checkpoint_name: "transformer-edc-epoch=33-val_loss=0.3417.ckpt"
+
+
+data:
+  csv_path: "D:/Stuff/TU Ilmenau/Masters In Media Engineering/ADSP/LSTM-Model-Energy-Decay-Curves-main/LSTM-Model-Energy-Decay-Curves-main/dataset/room_acoustic_largedataset/roomFeaturesDataset.csv"
+  edc_dir: "D:/Stuff/TU Ilmenau/Masters In Media Engineering/ADSP/LSTM-Model-Energy-Decay-Curves-main/LSTM-Model-Energy-Decay-Curves-main/dataset/EDC"
+  rir_dir: "data/RIRs"          # <-- NEW: path to RIR .npy files
+  scaler_dir: "data/scalers"
+
+  # what the model predicts
+  target_type: "edc"            # "edc" or "rir"
+
+  # only used if target_type == "rir"
+  rir_length: 65536             # <-- FIXED length for waveform output
+
+audio:
+  sample_rate: 48000
+
+model:
+  d_model: 128
+  nhead: 4
+  num_layers: 4
+
+run_validation: true
